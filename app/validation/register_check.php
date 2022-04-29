@@ -10,9 +10,10 @@
     
       $error = false;
       $success = false;
-      $name = $email = $password = $confirm_password = "";
+      $name = $email = $password = $confirm_password = $pass ="";
     
       if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $pass = $_POST["password"];  
         if(empty(trim($_POST["name"]))){
           $erro_nome = "Nome é obrigatório.";
           $error = true;

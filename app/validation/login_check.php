@@ -9,9 +9,10 @@
       }
     
     $error = false;
-    $password = $email = "";
+    $password = $email = $pass = "";
    
     if (!$login && $_SERVER["REQUEST_METHOD"] == "POST") {
+        $pass = $_POST["password"];
         if(empty(trim($_POST["email"]))){
           $erro_email = "Email é obrigatório.";
           $error = true;

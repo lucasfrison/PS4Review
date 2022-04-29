@@ -25,8 +25,7 @@
       <?php if ($_SERVER["REQUEST_METHOD"] == "POST"): ?>
         <?php if (!$error): ?>
               <?php // limpa o formulário.
-                $email      = "";
-                $senha      = "";
+                $email = $password = "";
               ?>
         <?php else: ?>
           <div class="alert alert-danger">
@@ -55,7 +54,7 @@
         <div class="form-group <?php if(!empty($erro_senha)){echo "has-error";}?>">
           <label for="inputSenha" class="col-sm-2 control-label">Senha</label>
           <div class="col-sm-10">
-            <input required type="password" class="form-control" name="password" placeholder="Senha" value="<?php echo $password; ?>">
+            <input required type="password" class="form-control" name="password" placeholder="Senha" value="<?php echo $pass; ?>">
             <div id="erro-senha">
 
             </div>

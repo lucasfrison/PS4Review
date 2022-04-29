@@ -22,6 +22,17 @@
     <div class="col-xs-12">
       <h1 class="page-header">Criar Conta</h1>
 
+      <?php if ($_SERVER["REQUEST_METHOD"] == "POST"): ?>
+        <?php if (!$error): ?>
+              <?php // limpa o formulário.
+                $name = $email = $password = $confirm_password = "";
+              ?>
+        <?php else: ?>
+          <div class="alert alert-danger">
+            Falha ao criar conta!
+          </div>
+      <?php endif; ?>
+      <?php endif; ?>
       <?php if ($success): ?>
         <h3 style="color:lightgreen;">Usuário criado com sucesso!</h3>
         <p>
