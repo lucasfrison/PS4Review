@@ -29,10 +29,6 @@
         </p>
       <?php endif; ?>
 
-      <?php if ($error): ?>
-        <h3 style="color:red;"><?php echo $error_msg; ?></h3>
-      <?php endif; ?>
-
       <form enctype="multipart/form-data" id="form-test" class="form-horizontal" method="POST" action="register.php">
         
         <!---Nome---->

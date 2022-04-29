@@ -59,23 +59,18 @@
           $password = mysqli_real_escape_string($conn,$_POST["password"]);
           $confirm_password = mysqli_real_escape_string($conn,$_POST["confirm_password"]);
     
-          if ($password == $confirm_password) {
-            $password = md5($password);
+          $password = md5($password);
     
-            $sql = "INSERT INTO $table_users
-                    (name, email, password) VALUES
-                    ('$name', '$email', '$password');";
+          $sql = "INSERT INTO $table_users
+                  (name, email, password, created_at) VALUES
+                  ('$name', '$email', '$password', NOW());";
     
-            if(mysqli_query($conn, $sql)){
-              $success = true;
-            }
-            else {
-              $error_msg = mysqli_error($conn);
-              $error = true;
-            }
+          if(mysqli_query($conn, $sql)){
+            $name = $email = $password = $confirm_password = "";  
+            $success = true;
           }
           else {
-            $error_msg = "Senha não confere com a confirmação.";
+            $error_msg = mysqli_error($conn);
             $error = true;
           }
         }

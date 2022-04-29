@@ -1,6 +1,7 @@
 <?php
-    $servername = "localhost";
-    $username = "lucas";
-    $password = "challenger88516258";
-    $dbname = "PS4Review";
+    $servername = 'localhost';
+    $username = 'root';
+    $password = 'root';
+    $dbname = 'PS4Review';
+    $table_users = 'users';
 ?>

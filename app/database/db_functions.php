@@ -1,12 +1,13 @@
 <?php
 require "db_credentials.php";
 
-function connect_db(){
-  global $servername, $username, $password, $dbname;
-  $conn = mysqli_connect($servername, $username, $password, $dbname);
+$server = $servername; $user = $username; $pass = $password; $db = $dbname;
 
+function connect_db(){
+  global $server, $user, $pass, $db;
+  $conn = mysqli_connect($server, $user, $pass, $db);
   if (!$conn) {
-      die("Connection failed: " . mysqli_connect_error());
+      die("Conexao falhou: " . mysqli_connect_error());
   }
 
   return($conn);
