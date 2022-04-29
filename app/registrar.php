@@ -2,7 +2,7 @@
   ini_set('display_errors', 1);
   ini_set('display_startup_errors', 1);
   error_reporting(E_ALL);
-  require "validation/check_form.php";
+  require "validation/check_form_register.php";
 ?>
 <!DOCTYPE html>
 <html>
