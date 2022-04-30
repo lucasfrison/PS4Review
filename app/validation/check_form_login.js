@@ -1,7 +1,7 @@
 $(function(){
     $("#form-test").on("submit",function(){
       email_input = $("input[name='email']");
-      senha_input = $("input[name='senha']");
+      senha_input = $("input[name='password']");
   
       if(email_input.val() == "" || email_input.val() == null)
       {
