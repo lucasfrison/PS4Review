@@ -40,6 +40,16 @@
         echo "<br>Error ao criar a tabela $table_users: " . mysqli_error($conn);
     }
 
+    $sql = "INSERT INTO $table_users
+            (name, email, password, created_at) VALUES
+            ($admin_name, $admin_email, $admin_pass, NOW());";
+
+    if (mysqli_query($conn, $sql)) {
+        echo "<br>Usuario $admin_name criado com sucesso!<br>";
+    } else {
+        echo "<br>Error ao criar o usuario $admin_name: " . mysqli_error($conn);
+    }        
+
     $sql = "CREATE TABLE $table_posts (
         id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         user_id INT,

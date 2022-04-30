@@ -1,0 +1,40 @@
+
+.topbar {
+    overflow: hidden;
+    background-color: blueviolet;
+    position: fixed; 
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 40px;
+    color: blueviolet;
+    font-weight: bold;
+  }
+
+.topbar a {
+    color: white;
+    display: block;
+    float: right;
+    padding: 11px 15px;
+}
+
+.white {
+    color: white;
+}
+
+
+.topbar span {
+    float: left;
+    padding: 6px 15px;
+    font-size: 150%;
+    color: white;
+}
+
+.topbar ul li{
+    display: inline;
+}
+
+.lightgray {
+    background-color:azure;
+}
+

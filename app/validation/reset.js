@@ -1,0 +1,3 @@
+function resetHref() {
+    location.hash = '';
+}

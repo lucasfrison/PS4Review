@@ -1,12 +1,6 @@
 <?php 
     require $_SERVER['DOCUMENT_ROOT'].'/web1-trabalhofinal/app/database/db_functions.php';
-
-    function verifica_campo($texto){
-        $texto = trim($texto);
-        $texto = stripslashes($texto);
-        $texto = htmlspecialchars($texto);
-        return $texto;
-      }
+    require "val_functions.php";
     
     $error = false;
     $password = $email = $pass = "";
@@ -49,7 +43,7 @@
            $user = mysqli_fetch_assoc($result);
    
            if ($user["password"] == $password) {
-   
+
              $_SESSION["user_id"] = $user["id"];
              $_SESSION["user_name"] = $user["name"];
              $_SESSION["user_email"] = $user["email"];
