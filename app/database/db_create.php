@@ -40,5 +40,38 @@
         echo "<br>Error ao criar a tabela $table_users: " . mysqli_error($conn);
     }
 
+    $sql = "CREATE TABLE $table_posts (
+        id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        user_id INT,
+        title VARCHAR(100) NOT NULL,
+        content VARCHAR(400) NOT NULL,
+        created_at DATETIME,
+        updated_at DATETIME,
+        FOREIGN KEY (user_id) REFERENCES $table_users(id)
+      )";
+
+    if (mysqli_query($conn, $sql)) {
+        echo "<br>Tabela $table_posts criada com sucesso!<br>";
+    } else {
+        echo "<br>Error ao criar a tabela $table_posts: " . mysqli_error($conn);
+    }
+
+    $sql = "CREATE TABLE $table_comments (
+        id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        user_id INT,
+        post_id INT,
+        content VARCHAR(400) NOT NULL,
+        created_at DATETIME,
+        updated_at DATETIME,
+        FOREIGN KEY (user_id) REFERENCES $table_users(id),
+        FOREIGN KEY (post_id) REFERENCES $table_posts(id)
+      )";
+
+    if (mysqli_query($conn, $sql)) {
+        echo "<br>Tabela $table_comments criada com sucesso!<br>";
+    } else {
+        echo "<br>Error ao criar a tabela $table_comments: " . mysqli_error($conn);
+    }
+
     mysqli_close($conn);
 ?>

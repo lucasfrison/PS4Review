@@ -12,6 +12,7 @@
   <title>PS4Review</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <script src="/validation/check_form_login.js"></script>
@@ -34,8 +35,9 @@
         <?php endif; ?>
       <?php endif; ?>
 
-      <form enctype="multipart/form-data" id="form-test" class="form-horizontal" method="POST" action="login.php">
+      <form enctype="multipart/form-data" id="form-test" method="POST" action="login.php">
 
+        
         <!---email---->
         <div class="form-group <?php if(!empty($erro_email)){echo "has-error";}?>">
           <label for="inputEmail" class="col-sm-2 control-label">Email</label>
@@ -66,9 +68,9 @@
 
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-default">Entrar</button>
-            <button type="submit" class="btn btn-default">
-              <a href="register.php">Criar Conta</a>
+            <button type="submit" class="button">Entrar</button>
+            <button type="submit" class="button transparent">
+              <a href="register.php" class="violet">Criar Conta</a>
             </button>
           </div>
         </div>
