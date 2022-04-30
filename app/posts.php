@@ -30,7 +30,7 @@
         </div>
     </div>
   <?php else:?>
-    <h1>Voce nao tem permissao para acessar essa pagina</h1>
+    <?php die("<h1>Voce nao tem permissao para acessar essa pagina!!!</h1>");?>
   <?php endif;?>    
 </body>
 </html>

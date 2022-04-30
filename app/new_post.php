@@ -10,6 +10,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
+  <?php if ($isadmin):?>
     <div class="topbar col-xs-12">
       <span>PS4Review</span>
 
@@ -25,5 +26,8 @@
             <h1 class="page-header">Novo post</h1>
         </div>
     </div>
+  <?php else:?>
+    <?php die("<h1>Voce nao tem permissao para acessar essa pagina!!!</h1>");?>
+  <?php endif;?>   
 </body>
 </html>
