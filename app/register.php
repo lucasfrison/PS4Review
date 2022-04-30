@@ -12,6 +12,7 @@
   <title>PS4Review</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <script src="/validation/check_form_register.js"></script>
@@ -40,7 +41,7 @@
         </p>
       <?php endif; ?>
 
-      <form enctype="multipart/form-data" id="form-test" class="form-horizontal" method="POST" action="register.php">
+      <form enctype="multipart/form-data" id="form-test" method="POST" action="register.php">
         
         <!---Nome---->
         <div class="form-group <?php if(!empty($erro_nome)){echo "has-error";}?>">
@@ -86,9 +87,9 @@
 
         <!---Confirmar senha---->
         <div class="form-group <?php if(!empty($erro_conf_senha)){echo "has-error";}?>">
-          <label for="inputConf_senha" class="col-sm-2 control-label">Confirmar Senha</label>
+          <label style="padding-top: 18px;" for="inputConf_senha" class="col-sm-2 control-label">Confirmar senha</label>
           <div class="col-sm-10">
-            <input required type="password" class="form-control" name="confirm_password" placeholder="Conf_senha" value="<?php echo $confirm_password; ?>">
+            <input required type="password" class="form-control" name="confirm_password" placeholder="Confirmar senha" value="<?php echo $confirm_password; ?>">
             <div id="erro-conf_senha">
 
             </div>
@@ -100,7 +101,7 @@
 
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-default">Criar Conta</button>
+            <button type="submit" class="button">Criar Conta</button>
           </div>
         </div>
       </form>
