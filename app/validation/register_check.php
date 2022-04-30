@@ -58,7 +58,7 @@
   
         $sql = "INSERT INTO $table_users
                 (name, email, password, created_at) VALUES
-                ('$name', '$email', '$password', NOW());";
+                ('$name', '$email', '$password', NOW())";
   
         if(mysqli_query($conn, $sql)){
           $name = $email = $password = $confirm_password = "";  

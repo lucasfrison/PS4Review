@@ -42,7 +42,7 @@
 
     $sql = "INSERT INTO $table_users
             (name, email, password, created_at) VALUES
-            ($admin_name, $admin_email, $admin_pass, NOW());";
+            ('$admin_name', '$admin_email', '$admin_pass', NOW());";
 
     if (mysqli_query($conn, $sql)) {
         echo "<br>Usuario $admin_name criado com sucesso!<br>";
@@ -52,7 +52,7 @@
 
     $sql = "CREATE TABLE $table_posts (
         id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-        user_id INT,
+        user_id INT(6) UNSIGNED,
         title VARCHAR(100) NOT NULL,
         content VARCHAR(400) NOT NULL,
         created_at DATETIME,
@@ -68,8 +68,8 @@
 
     $sql = "CREATE TABLE $table_comments (
         id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-        user_id INT,
-        post_id INT,
+        user_id INT(6) UNSIGNED,
+        post_id INT(6) UNSIGNED,
         content VARCHAR(400) NOT NULL,
         created_at DATETIME,
         updated_at DATETIME,
