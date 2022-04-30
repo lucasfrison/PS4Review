@@ -50,7 +50,7 @@
         </p>
       <?php endif; ?>
 
-      <form enctype="multipart/form-data" id="form-test" method="POST" action="register.php">
+      <form style="transform: translate(-50%, 25%);" enctype="multipart/form-data" id="form-test" method="POST" action="register.php">
         
         <!---Nome---->
         <div class="form-group <?php if(!empty($erro_nome)){echo "has-error";}?>">
