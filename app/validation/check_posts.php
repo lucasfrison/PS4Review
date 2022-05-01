@@ -23,7 +23,7 @@ function show_posts() {
             $id = $row['id'];
         }
         echo "<td><a class='white btn btn-success' role='button' href='edit_post.php?id=$id'>Editar</a></td>";
-        echo "<td><a class='white btn btn-danger' role='button'>Excluir</a></td>";
+        echo "<td><a class='white btn btn-danger' role='button' href='posts.php?delete?id=$id'>Excluir</a></td>";
         echo "</tr>";
     }
     echo "</table>";
