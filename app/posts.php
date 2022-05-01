@@ -1,5 +1,6 @@
 <?php 
     require "validation/authenticate.php";
+    require "validation/check_posts.php";
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -26,7 +27,8 @@
     <div class="container">
         <div style="margin-top: 40px;" class="col-xs-12">    
             <h1 class="page-header">Meus posts</h1>
-            <button class="button"><a class="white" href="new_post.php">Novo Post</a></button>
+            <a class="white button" href="new_post.php">Novo Post</a></button>
+            <?php show_posts(); ?>
         </div>
     </div>
   <?php else:?>

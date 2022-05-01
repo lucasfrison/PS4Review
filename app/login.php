@@ -78,9 +78,9 @@
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10">
             <button type="submit" class="button">Entrar</button>
-            <button class="button transparent">
-              <a href="register.php" class="violet">Criar Conta</a>
-            </button>
+            
+              <a href="register.php" class="button transparent">Criar Conta</a>
+            
           </div>
         </div>
       </form>

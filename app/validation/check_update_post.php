@@ -1,41 +1,41 @@
 <?php 
     require_once $_SERVER['DOCUMENT_ROOT'].'/web1-trabalhofinal/app/database/db_functions.php';
     require "val_functions.php";
+    require "check_posts.php";
     
+    $id = $_GET['id'];
     $error = false;
     $title = $text = "";
    
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if(empty(trim($_POST["title"]))){
+        if(empty(trim($_POST["title_e"]))){
           $erro_titulo = "Titulo é obrigatório.";
           $error = true;
         }
         else{
-          $title = verifica_campo($_POST["title"]);
+          $title = verifica_campo($_POST["title_e"]);
         }
-        if(empty(trim($_POST["text"]))){
+        if(empty(trim($_POST["text_e"]))){
           $erro_texto = "O post nao pode ser vazio.";
           $error = true;
         }
         else{
-          $text = verifica_campo($_POST["text"]);
+          $text = verifica_campo($_POST["text_e"]);
         }    
     if (!$error)
-     if (isset($_POST["title"]) && isset($_POST["text"])) {
+     if (isset($_POST["title_e"]) && isset($_POST["text_e"])) {
    
        $conn = connect_db();
    
-       $title = mysqli_real_escape_string($conn,$_POST["title"]);
-       $text = mysqli_real_escape_string($conn,$_POST["text"]);
+       $title = mysqli_real_escape_string($conn,$_POST["title_e"]);
+       $text = mysqli_real_escape_string($conn,$_POST["text_e"]);
 
-       $sql = "INSERT INTO $table_posts
-       (title, content, created_at, updated_at) VALUES
-       ('$title', '$text', NOW(), NOW())";
+       $sql = "UPDATE $table_posts SET title = '$title', content = '$text', updated_at = NOW() WHERE id = $id";
 
         if(mysqli_query($conn, $sql)){
             $title = $name = $text = "";  
             $success = true;
-            header("Location: " . dirname($_SERVER['SCRIPT_NAME']) . "/index.php");
+            header("Location: " . dirname($_SERVER['SCRIPT_NAME']) . "/posts.php");
             exit();
         }
         else {

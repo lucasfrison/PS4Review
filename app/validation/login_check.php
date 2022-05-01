@@ -65,10 +65,12 @@
          $error_msg = mysqli_error($conn);
          $error = true;
        }
+       disconnect_db($conn);
      }
      else {
        $error_msg = "Por favor, preencha todos os dados.";
        $error = true;
      }
    }
+   
 ?>

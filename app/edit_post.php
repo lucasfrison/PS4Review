@@ -3,7 +3,9 @@
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
     require "validation/authenticate.php";
-    require "validation/check_new_post.php";
+    require "validation/check_update_post.php";
+
+    
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -15,7 +17,7 @@
     <link rel="stylesheet" href="css/index.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="validation/check_form_new_post.js"></script>
+    <script src="validation/check_form_edit_post.js"></script>
 </head>
 <body>
   <?php if ($isadmin):?>
@@ -32,29 +34,27 @@
     <div class="container">
         <div style="margin-top: 40px;" class="col-xs-12">    
           <h1 class="page-header">Novo post</h1>
-
+        
           <?php if ($_SERVER["REQUEST_METHOD"] == "POST"): ?>
-            <?php if ($status != 'edit'): ?>
             <?php if (!$error): ?>
               <?php // limpa o formulário.
                 $title = $text = "";
               ?>
               <?php else: ?>
                 <div class="alert alert-danger">
-                  Falha ao criar o post!
+                  Falha ao alterar o post!
                 </div>
             <?php endif;?>
             <?php endif;?>
-          <?php endif; ?>
 
-          <form style="width: 80%; transform: translate(-50%, 20%);" enctype="multipart/form-data" id="form-test" method="POST" action="new_post.php">
+          <form style="width: 80%; transform: translate(-50%, 20%);" enctype="multipart/form-data" id="form-test" method="POST" action="">
 
         
             <!---titulo---->
             <div class="form-group <?php if(!empty($erro_titulo)){echo "has-error";}?>">
               <label for="inputTitulo" class="col-sm-2 control-label">Titulo</label>
               <div class="col-sm-10">
-                <input required type="text" class="form-control" name="title" placeholder="Titulo" value="<?php echo $title; ?>">
+                <input required type="text" class="form-control" name="title_e" placeholder="Titulo" value="<?php echo $title; ?>">
                 <div id="erro-titulo">
 
                 </div>
@@ -68,7 +68,7 @@
             <div class="form-group <?php if(!empty($erro_texto)){echo "has-error";}?>">
               <label for="inputTexto" class="col-sm-2 control-label">Texto</label>
               <div class="col-sm-10">
-                <textarea style="margin-top: 20px;" required type="text" class="form-control" name="text" placeholder="Texto" value="<?php echo $texto; ?>" rows="10"></textarea>
+                <textarea style="margin-top: 20px;" required type="text_e" class="form-control" name="text_e" placeholder="Texto" value="<?php echo $texto; ?>" rows="10"></textarea>
                 <div id="erro-texto">
 
                 </div>
