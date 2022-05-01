@@ -1,7 +1,7 @@
 $(function(){
     $("#form-test").on("submit",function(){
       email_input = $("input[name='title']");
-      text_input = $("input[name='text']");
+      text_input = $("textarea[name='text']");
   
       if(email_input.val() == "" || email_input.val() == null)
       {

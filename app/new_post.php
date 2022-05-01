@@ -1,4 +1,7 @@
 <?php 
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
     require "validation/authenticate.php";
     require "validation/check_new_post.php";
 ?>
@@ -42,7 +45,7 @@
             <?php endif; ?>
           <?php endif; ?>
 
-          <form style="width: 80%; height: 400px; transform: translate(-50%, 20%);" enctype="multipart/form-data" id="form-test" method="POST" action="login.php">
+          <form style="width: 80%; transform: translate(-50%, 20%);" enctype="multipart/form-data" id="form-test" method="POST" action="new_post.php">
 
         
             <!---titulo---->

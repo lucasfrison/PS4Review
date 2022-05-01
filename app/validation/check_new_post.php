@@ -19,7 +19,7 @@
         }
         else{
           $text = verifica_campo($_POST["text"]);
-    }
+        }    
     if (!$error)
      if (isset($_POST["title"]) && isset($_POST["text"])) {
    
@@ -40,10 +40,10 @@
             $error_msg = mysqli_error($conn);
             $error = true;
         }
-     }
-     else {
+    }
+    else {
        $error_msg = "Por favor, preencha todos os dados.";
        $error = true;
      }
-   }
+    } 
 ?>
