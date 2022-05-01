@@ -23,7 +23,7 @@
           $error = true;
         }
         else{
-          $senha = verifica_campo($_POST["password"]);
+          $password = verifica_campo($_POST["password"]);
     }
     if (!$error)
      if (isset($_POST["email"]) && isset($_POST["password"])) {

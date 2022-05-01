@@ -53,8 +53,18 @@
         $email = mysqli_real_escape_string($conn,$_POST["email"]);
         $password = mysqli_real_escape_string($conn,$_POST["password"]);
         $confirm_password = mysqli_real_escape_string($conn,$_POST["confirm_password"]);
-  
         $password = md5($password);
+
+        $sql = "SELECT * FROM $table_users WHERE email=$email";
+
+        if(!mysqli_query($conn, $sql)){
+          $name = $email = $password = $confirm_password = "";  
+          $success = true;
+        }
+        else {
+          $error = true;
+          $erro_email = "Email ja cadastrado.";
+        }
   
         $sql = "INSERT INTO $table_users
                 (name, email, password, created_at) VALUES

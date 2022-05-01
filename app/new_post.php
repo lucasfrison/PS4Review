@@ -1,5 +1,6 @@
 <?php 
     require "validation/authenticate.php";
+    require "validation/check_new_post.php";
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -11,6 +12,7 @@
     <link rel="stylesheet" href="css/index.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="validation/check_form_new_post.js"></script>
 </head>
 <body>
   <?php if ($isadmin):?>
@@ -27,6 +29,19 @@
     <div class="container">
         <div style="margin-top: 40px;" class="col-xs-12">    
           <h1 class="page-header">Novo post</h1>
+
+          <?php if ($_SERVER["REQUEST_METHOD"] == "POST"): ?>
+            <?php if (!$error): ?>
+              <?php // limpa o formulário.
+                $title = $text = "";
+              ?>
+              <?php else: ?>
+                <div class="alert alert-danger">
+                  Falha ao criar o post!
+                </div>
+            <?php endif; ?>
+          <?php endif; ?>
+
           <form style="width: 80%; height: 400px; transform: translate(-50%, 20%);" enctype="multipart/form-data" id="form-test" method="POST" action="login.php">
 
         

@@ -11,5 +11,5 @@
     //Admin
     $admin_name = 'admin';
     $admin_email = 'lucfg15@gmail.com';
-    $admin_pass = 'admin';
+    $admin_pass = md5('admin');
 ?>

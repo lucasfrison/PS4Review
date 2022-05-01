@@ -37,7 +37,7 @@
     if (mysqli_query($conn, $sql)) {
         echo "<br>Tabela $table_users criada com sucesso!<br>";
     } else {
-        echo "<br>Error ao criar a tabela $table_users: " . mysqli_error($conn);
+        echo "<br>Erro ao criar a tabela $table_users: " . mysqli_error($conn);
     }
 
     $sql = "INSERT INTO $table_users
@@ -47,12 +47,11 @@
     if (mysqli_query($conn, $sql)) {
         echo "<br>Usuario $admin_name criado com sucesso!<br>";
     } else {
-        echo "<br>Error ao criar o usuario $admin_name: " . mysqli_error($conn);
+        echo "<br>Erro ao criar o usuario $admin_name: " . mysqli_error($conn);
     }        
 
     $sql = "CREATE TABLE $table_posts (
         id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-        user_id INT(6) UNSIGNED,
         title VARCHAR(100) NOT NULL,
         content VARCHAR(400) NOT NULL,
         created_at DATETIME,
@@ -63,7 +62,7 @@
     if (mysqli_query($conn, $sql)) {
         echo "<br>Tabela $table_posts criada com sucesso!<br>";
     } else {
-        echo "<br>Error ao criar a tabela $table_posts: " . mysqli_error($conn);
+        echo "<br>Erro ao criar a tabela $table_posts: " . mysqli_error($conn);
     }
 
     $sql = "CREATE TABLE $table_comments (
@@ -80,7 +79,7 @@
     if (mysqli_query($conn, $sql)) {
         echo "<br>Tabela $table_comments criada com sucesso!<br>";
     } else {
-        echo "<br>Error ao criar a tabela $table_comments: " . mysqli_error($conn);
+        echo "<br>Erro ao criar a tabela $table_comments: " . mysqli_error($conn);
     }
 
     mysqli_close($conn);
