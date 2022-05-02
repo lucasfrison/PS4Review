@@ -1,6 +1,7 @@
 <?php 
     require "validation/authenticate.php";
     require "validation/check_posts.php";
+    require "validation/check_delete_post.php";
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">

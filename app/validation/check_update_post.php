@@ -27,6 +27,7 @@
    
        $conn = connect_db();
    
+       $id = mysqli_real_escape_string($conn,$id);
        $title = mysqli_real_escape_string($conn,$_POST["title_e"]);
        $text = mysqli_real_escape_string($conn,$_POST["text_e"]);
 
