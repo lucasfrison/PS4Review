@@ -57,8 +57,7 @@
 
         $sql = "SELECT * FROM $table_users WHERE email=$email";
 
-        if(!mysqli_query($conn, $sql)){
-          $name = $email = $password = $confirm_password = "";  
+        if(!mysqli_query($conn, $sql)){ 
           $success = true;
         }
         else {

@@ -6,6 +6,7 @@
     require "validation/check_update_post.php";
 
     $title = $_GET['title'];
+    $text2 = $_GET['text'];
     
 ?>
 <!DOCTYPE html>
@@ -39,7 +40,7 @@
           <?php if ($_SERVER["REQUEST_METHOD"] == "POST"): ?>
             <?php if (!$error): ?>
               <?php // limpa o formulário.
-                $title = $text = "";
+                
               ?>
               <?php else: ?>
                 <div class="alert alert-danger">
@@ -55,7 +56,7 @@
             <div class="form-group <?php if(!empty($erro_titulo)){echo "has-error";}?>">
               <label for="inputTitulo" class="col-sm-2 control-label">Titulo</label>
               <div class="col-sm-10">
-                <input required type="text" class="form-control" name="title_e" placeholder="Titulo" value="<?php echo $title; ?>">
+                <input required type="text" class="form-control" name="title_e" value="<?php echo $title; ?>">
                 <div id="erro-titulo">
 
                 </div>
@@ -69,7 +70,7 @@
             <div class="form-group <?php if(!empty($erro_texto)){echo "has-error";}?>">
               <label for="inputTexto" class="col-sm-2 control-label">Texto</label>
               <div class="col-sm-10">
-                <textarea style="margin-top: 20px;" required type="text" class="form-control" name="text_e" placeholder="Texto" value="<?php echo $texto; ?>" rows="10"></textarea>
+                <textarea style="margin-top: 20px;" required type="text" class="form-control" name="text_e" value="<?php echo $text2; ?>" rows="10"></textarea>
                 <div id="erro-texto">
 
                 </div>

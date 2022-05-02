@@ -1,7 +1,12 @@
 <?php 
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
     require "validation/authenticate.php";
     require "validation/check_posts.php";
     require "validation/check_new_comment.php";
+    require "validation/edit_comment.php";
+    
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -12,16 +17,26 @@
     <link type="text/css" rel="stylesheet" href="css/index.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="/validation/check_form_new_comment.js"></script>
+    <script src="validation/check_form_new_comment.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) { 
+            var scrollpos = localStorage.getItem('scrollpos');
+            if (scrollpos) window.scrollTo(0, scrollpos);
+        });
+
+        window.onbeforeunload = function(e) {
+            localStorage.setItem('scrollpos', window.scrollY);
+        };
+    </script>
 </head>
 <body>
     <?php if ($login): ?>  
         <?php if ($_SERVER["REQUEST_METHOD"] == "POST"): ?>
-        <?php if (!$error): ?>
+        
               <?php // limpa o formulário.
                 $texto = "";
               ?>
-        <?php endif; ?>
+        
         <?php endif;?>
     <div class="topbar col-xs-12">
       <span>PS4Review</span>
@@ -37,23 +52,25 @@
 
     <div class="container">
         <div style="margin-top: 40px;" class="col-xs-12"> 
+            <?php $id = $_GET['id'];?>
             <?php $title = $_GET['title'];?>
-            <?php $text = $_GET['text'];?>
+            <?php $text2 = $_GET['text'];?>
             <?php echo "<h1 class='page-header'>$title</h1>"; ?>
             <p>
               <span style="font-size: 16px;">
-                <?php echo "$text";?>
+                <?php echo "$text2";?><br><br>
+                <?php echo "Autor: $admin_name";?>
               </span>
             </p>
         </div>
+        <?php if(!isset($_GET['edit'])):  ?>
         <div style="margin-top: 40px;" class="col-xs-12">
-            <h3>Comentarios</h3>
-            <?php show_comments(); ?>
-            <form enctype="multipart/form-data" id="form-test" method="POST" action="">
+        
+            <form enctype="multipart/form-data" id="form-test" method="POST" action=''>
 
                 <!---Texto---->
-                <div class="form-group <?php if(!empty($erro_texto)){echo "has-error";}?>">
-                  <div class="col-sm-8">
+                <div class="form-group col-xs-7 <?php if(!empty($erro_texto)){echo "has-error";}?>">
+                  <div>
                   <label for="inputTexto" class="col-sm-3 control-label">Novo Comentario</label>
                     <textarea style="margin-top: 20px;" required type="text" class="form-control" name="comment" placeholder="Comentario" value="<?php echo $texto; ?>" rows="5"></textarea>
                     <div id="erro-texto">
@@ -71,8 +88,15 @@
                   </div>
                 </div>
             </form>
+            
         </div>
+        <?php endif;?>
+       
     </div>
+    <div class="container">
+        <h3 style="border-top: 20px;" class="page-header">Comentarios</h3>
+        <?php show_comments(); ?>
+    </div>    
     <?php else:?>
         <?php die("<h1>Voce nao tem permissao para acessar essa pagina!!"); ?>
     <?php endif;?>    

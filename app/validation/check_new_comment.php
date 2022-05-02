@@ -1,10 +1,12 @@
 <?php 
     require_once $_SERVER['DOCUMENT_ROOT'].'/web1-trabalhofinal/app/database/db_functions.php';
     require "val_functions.php";
+
+    $autor = $_SESSION['user_name'];
     
     $error = false;
-    $text = "";
    
+   if (isset($_POST['comment'])) { 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if(empty(trim($_POST["comment"]))){
           $erro_texto = "O commentario nao pode ser vazio.";
@@ -27,7 +29,7 @@
        ($user_id, $post_id, '$text', NOW(), NOW())";
 
         if(mysqli_query($conn, $sql)){
-            $title = $name = $text = "";  
+            $title = $name = $text = ""; 
             $success = true;
         }
         else {
@@ -41,4 +43,5 @@
        $error = true;
      }
     } 
+  }
 ?>
