@@ -3,6 +3,7 @@
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
     require "validation/authenticate.php";
+    require "validation/check_posts.php";
 ?>
 
 <!DOCTYPE html>
@@ -49,11 +50,12 @@
               <span style="font-size: 16px;">Nao tem certeza se deve comprar aquele game novo?<br>
               Veja nossas avaliacoes. <br>
               Nossas avaliacoes levam em consideracao diversos fatores <br>
-              como jogabilidade, historia, bugs e a imersao do game. <br>
+              como jogabilidade, historia, bugs e a imersao do game. <br></span>
             </p>
         </div>
         <div style="margin-top: 40px;"class="div col-xs-3 lightgray">
-          <h1 class="page-header text-center">Ultimos reviews</h1>
+          <h1 class="page-header text-center">Reviews</h1>
+          <?php show_post_list(); ?>
         </div>
     </div>
 </body>

@@ -5,6 +5,7 @@
     require "validation/authenticate.php";
     require "validation/check_update_post.php";
 
+    $title = $_GET['title'];
     
 ?>
 <!DOCTYPE html>
@@ -33,7 +34,7 @@
 
     <div class="container">
         <div style="margin-top: 40px;" class="col-xs-12">    
-          <h1 class="page-header">Novo post</h1>
+          <h1 class="page-header">Editar post</h1>
         
           <?php if ($_SERVER["REQUEST_METHOD"] == "POST"): ?>
             <?php if (!$error): ?>
@@ -68,7 +69,7 @@
             <div class="form-group <?php if(!empty($erro_texto)){echo "has-error";}?>">
               <label for="inputTexto" class="col-sm-2 control-label">Texto</label>
               <div class="col-sm-10">
-                <textarea style="margin-top: 20px;" required type="text_e" class="form-control" name="text_e" placeholder="Texto" value="<?php echo $texto; ?>" rows="10"></textarea>
+                <textarea style="margin-top: 20px;" required type="text" class="form-control" name="text_e" placeholder="Texto" value="<?php echo $texto; ?>" rows="10"></textarea>
                 <div id="erro-texto">
 
                 </div>
