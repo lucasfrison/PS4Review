@@ -47,13 +47,22 @@
             </h1>
             <p>
               <h2>PS4Review</h2>
-              <span style="font-size: 16px;">Nao tem certeza se deve comprar aquele game novo?<br>
+              <span style="font-size: 24px;">Nao tem certeza se deve comprar aquele game novo?<br>
               Veja nossas avaliacoes. <br>
               Nossas avaliacoes levam em consideracao diversos fatores <br>
               como jogabilidade, historia, bugs e a imersao do game. <br></span>
             </p>
+            <p>
+              <h2 class="page-header">Sobre mim</h2>
+              <img width="190" src="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png">
+              <span style="font-size: 24px; float: right; margin-top: 32px;">Meu nome e lorem ipsum.<br>
+              Me dedico a fazer avaliacoes de games. <br>
+              Se voce quer saber como e um jogo se gastar seu dinheiro<br>
+              voce veio ao lugar certo. <br></span>
+            </p>
+            
         </div>
-        <div style="margin-top: 40px;"class="div col-xs-3 lightgray">
+        <div style="margin-top: 40px;"class="div col-xs-3">
           <h1 class="page-header text-center">Reviews</h1>
           <?php show_post_list(); ?>
         </div>

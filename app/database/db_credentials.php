@@ -9,7 +9,7 @@
     $table_comments = 'comments';
 
     //Admin
-    $admin_name = 'admin';
+    $admin_name = 'lucas';
     $admin_email = 'lucfg15@gmail.com';
     $admin_pass = md5('admin');
 ?>

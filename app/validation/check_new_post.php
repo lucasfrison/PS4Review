@@ -1,6 +1,9 @@
 <?php 
     require_once $_SERVER['DOCUMENT_ROOT'].'/web1-trabalhofinal/app/database/db_functions.php';
     require "val_functions.php";
+    require_once "authenticate.php";
+
+    if ($isadmin) {
     
     $error = false;
     $title = $text = "";
@@ -49,4 +52,5 @@
        $error = true;
      }
     } 
+   }
 ?>

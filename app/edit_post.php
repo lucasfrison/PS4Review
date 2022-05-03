@@ -72,7 +72,7 @@
               <div class="col-sm-10">
                 <textarea style="margin-top: 20px;" required type="text" class="form-control" name="text_e" value="<?php echo $text2; ?>" rows="10"></textarea>
                 <div id="erro-texto">
-
+                    
                 </div>
                 <?php if (!empty($erro_texto)): ?>
                   <span class="help-block"><?php echo $erro_texto ?></span>

@@ -2,6 +2,9 @@
     require_once $_SERVER['DOCUMENT_ROOT'].'/web1-trabalhofinal/app/database/db_functions.php';
     require_once "val_functions.php";
     require_once "check_posts.php";
+    require_once "authenticate.php";
+
+    if ($isadmin) {
     
     $id = $_GET['id'];
     $error = false;
@@ -20,4 +23,5 @@
         $error = true;
     }
     disconnect_db($conn);
+    }
 ?>

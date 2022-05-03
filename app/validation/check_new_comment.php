@@ -1,6 +1,9 @@
 <?php 
     require_once $_SERVER['DOCUMENT_ROOT'].'/web1-trabalhofinal/app/database/db_functions.php';
     require "val_functions.php";
+    require_once "authenticate.php";
+
+    if ($login) {
 
     $autor = $_SESSION['user_name'];
     
@@ -43,5 +46,6 @@
        $error = true;
      }
     } 
+  }
   }
 ?>
