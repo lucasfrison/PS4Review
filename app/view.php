@@ -44,8 +44,8 @@
             <?php $title = $_GET['title'];?>
             <?php $text2 = $_GET['text'];?>
             <?php echo "<h1 class='page-header'>$title</h1>"; ?>
-            <p>
-              <span style="font-size: 16px;">
+            <p style="word-wrap: break-word; width: 800px;">
+              <span style="font-size: 18px;">
                 <?php echo "$text2";?><br><br>
                 <?php echo "Autor: $admin_name";?>
               </span>

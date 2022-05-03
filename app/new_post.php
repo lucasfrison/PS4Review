@@ -34,7 +34,6 @@
           <h1 class="page-header">Novo post</h1>
 
           <?php if ($_SERVER["REQUEST_METHOD"] == "POST"): ?>
-            <?php if ($status != 'edit'): ?>
             <?php if (!$error): ?>
               <?php // limpa o formulário.
                 $title = $text = "";
@@ -44,7 +43,7 @@
                   Falha ao criar o post!
                 </div>
             <?php endif;?>
-            <?php endif;?>
+            
           <?php endif; ?>
 
           <form style="width: 80%; transform: translate(-50%, 20%);" enctype="multipart/form-data" id="form-test" method="POST" action="new_post.php">
@@ -88,11 +87,7 @@
           </form>
         </div>
     </div>
-    <div class="foot">
-          <h1 style="color: yellow">PS4 Review</h1>
-          <p>Essa pagina e simbolica. <br> Nao ha companhias relacionadas a ela.</p>
-          <span>Contato: lucfg15@gmail.com</span>
-    </div> 
+  
   <?php else:?>
     <?php die("<h1>Voce nao tem permissao para acessar essa pagina!!!</h1>");?>
   <?php endif;?>   

@@ -55,8 +55,7 @@
         title VARCHAR(100) NOT NULL,
         content VARCHAR(400) NOT NULL,
         created_at DATETIME,
-        updated_at DATETIME,
-        FOREIGN KEY (user_id) REFERENCES $table_users(id)
+        updated_at DATETIME
       )";
 
     if (mysqli_query($conn, $sql)) {
