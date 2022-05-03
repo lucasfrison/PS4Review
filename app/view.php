@@ -1,7 +1,4 @@
 <?php 
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
     require "validation/authenticate.php";
     require "validation/check_posts.php";
     require "validation/check_new_comment.php";
@@ -15,19 +12,10 @@
     <title>PS4Review</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link type="text/css" rel="stylesheet" href="css/index.css"/>
+    <link type="text/css" rel="stylesheet" href="css/form_view.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="validation/check_form_new_comment.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function(event) { 
-            var scrollpos = localStorage.getItem('scrollpos');
-            if (scrollpos) window.scrollTo(0, scrollpos);
-        });
-
-        window.onbeforeunload = function(e) {
-            localStorage.setItem('scrollpos', window.scrollY);
-        };
-    </script>
 </head>
 <body>
     <?php if ($login): ?>  
@@ -66,10 +54,10 @@
         <?php if(!isset($_GET['edit'])):  ?>
         <div style="margin-top: 40px;" class="col-xs-12">
         
-            <form enctype="multipart/form-data" id="form-test" method="POST" action=''>
+            <form enctype="multipart/form-data" class="form" id="form-test" method="POST" action=''>
 
                 <!---Texto---->
-                <div class="form-group col-xs-7 <?php if(!empty($erro_texto)){echo "has-error";}?>">
+                <div class="form-group col-xs-12 <?php if(!empty($erro_texto)){echo "has-error";}?>">
                   <div>
                   <label for="inputTexto" class="col-sm-3 control-label">Novo Comentario</label>
                     <textarea style="margin-top: 20px;" required type="text" class="form-control" name="comment" placeholder="Comentario" value="<?php echo $texto; ?>" rows="5"></textarea>
@@ -96,9 +84,14 @@
     <div class="container">
         <h3 style="border-top: 20px;" class="page-header">Comentarios</h3>
         <?php show_comments(); ?>
-    </div>    
+    </div> 
+    <div class="foot">
+          <h1 style="color: yellow">PS4 Review</h1>
+          <p>Essa pagina e simbolica. <br> Nao ha companhias relacionadas a ela.</p>
+          <span>Contato: lucfg15@gmail.com</span>
+    </div>   
     <?php else:?>
-        <?php die("<h1>Voce nao tem permissao para acessar essa pagina!!"); ?>
+        <?php die("<h1>Para acessar, faca <a href='login.php'>login</a></h1>"); ?>
     <?php endif;?>    
         
 </body>

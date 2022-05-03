@@ -111,6 +111,7 @@
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10">
             <button type="submit" class="button">Criar Conta</button>
+            <a href="login.php" class="button transparent">Tenho uma conta</a>
           </div>
         </div>
       </form>

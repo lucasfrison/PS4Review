@@ -1,4 +1,18 @@
 $(function(){
+    document.addEventListener("DOMContentLoaded", function(event) { 
+        var scrollpos = localStorage.getItem('scrollpos');
+        if (scrollpos) window.scrollTo(0, scrollpos);
+    });
+    
+    window.onbeforeunload = function(e) {
+        localStorage.setItem('scrollpos', window.scrollY);
+    };
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+}
+})
+
+$(function(){
     $("#form-test").submit(function(ev){
       text_input = $("textarea[name='comment']");
 

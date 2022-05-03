@@ -32,6 +32,11 @@
             <?php show_posts(); ?>
         </div>
     </div>
+    <div class="foot">
+          <h1 style="color: yellow">PS4 Review</h1>
+          <p>Essa pagina e simbolica. <br> Nao ha companhias relacionadas a ela.</p>
+          <span>Contato: lucfg15@gmail.com</span>
+    </div> 
   <?php else:?>
     <?php die("<h1>Voce nao tem permissao para acessar essa pagina!!!</h1>");?>
   <?php endif;?>    

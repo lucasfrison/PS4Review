@@ -57,6 +57,12 @@
           <h1 class="page-header text-center">Reviews</h1>
           <?php show_post_list(); ?>
         </div>
+
+    </div>
+    <div class="foot">
+          <h1 style="color: yellow">PS4 Review</h1>
+          <p>Essa pagina e simbolica. <br> Nao ha companhias relacionadas a ela.</p>
+          <span>Contato: lucfg15@gmail.com</span>
     </div>
 </body>
 </html>

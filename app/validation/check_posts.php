@@ -73,6 +73,7 @@ function show_comments() {
         if (isset($_GET['edit'])&&($cid == $_GET['edit'])) {
             echo "<form action='' enctype='multipart/form-data' id='form-edit' method='POST'>";
             echo '<div class="form-group <?php if(!empty($erro_texto)){echo "has-error";}"?>';
+            echo "<label for='inputC' class='col-sm-3 control-label'>Editar Comentario</label>";
             echo "<textarea required type='text' style='padding-right: 300px;' rows='5' name='ec' value='$comment'></textarea><br>";
             echo "<div id='erro-texto'></div>";
             echo "<?php if (!empty($erro_texto)): ?>
@@ -80,8 +81,9 @@ function show_comments() {
                   <?php endIf; ?>";
             echo "<input class='btn btn-success' type='submit' value='Confirmar'></input>"." ";
             echo "<a href='view.php?id=$id&title=$title&text=$text'>Voltar</a>";
-            echo "</form>";
             echo "</div>";
+            echo "</form>";
+           
         }
         else { echo "<p>$comment</p>";
             if ($row['name'] == $autor) {
