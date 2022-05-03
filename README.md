@@ -83,19 +83,19 @@ O projeto foi dividido em diretorios com arquivos, sendo:
         * check_form_....js : Arquivos de validacao de formulario no lado cliente;
 
 * **Arquivos em /app sem subdiretorio**
-    * *index.php* : Pagina principal;
-    * *login.php* : Pagina de login;
-    * *register.php* : Pagina de criacao de conta;
-    * *logout.php* : Pagina que realiza logout, nao possui aparencia.
-    * *new_post.php* : Pagina exclusiva do admin para criacao de posts.
-    * *edit_post.php* : Pagina exclusiva do admin para alteracao de posts.
-    * *posts.php* : Pagina exclusiva do admin que lista seus posts.
-    * *view.php* : Pagina para visualizar um post e seus comentarios, permitindo adicionar,
+    * index.php : Pagina principal;
+    * login.php : Pagina de login;
+    * register.php : Pagina de criacao de conta;
+    * logout.php : Pagina que realiza logout, nao possui aparencia.
+    * new_post.php : Pagina exclusiva do admin para criacao de posts.
+    * edit_post.php : Pagina exclusiva do admin para alteracao de posts.
+    * posts.php : Pagina exclusiva do admin que lista seus posts.
+    * view.php : Pagina para visualizar um post e seus comentarios, permitindo adicionar,
                    editar e excluir seus comentarios. 
 
 ## Autor
 **LUCAS FRISON GONCALVES**   
 
-## Project status
+## Status
 Projeto utilizado como ferramenta de aprendizado, nao ha planos de producao.
 Desenvolvimento encerrado.
