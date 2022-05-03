@@ -29,7 +29,7 @@ function show_posts() {
         echo "<td>".$id."</td>";
         echo "<td>".$title."</td>";
         echo "<td><a class='white btn btn-success' role='button' href='edit_post.php?id=$id&title=$title&text=$text'>Editar</a></td>";
-        echo "<td><a class='white btn btn-danger' role='button' href='validation/check_delete_post.php?id=$id'>Excluir</a></td>";
+        echo "<td><a class='white btn btn-danger' role='button' href='validation/check_delete_post.php?ID=$id'>Excluir</a></td>";
         echo "</tr>";
     }
     echo "</table>";
