@@ -77,7 +77,7 @@ function show_comments() {
             echo "<form action='' enctype='multipart/form-data' id='form-edit' method='POST'>";
             echo '<div class="form-group <?php if(!empty($erro_texto)){echo "has-error";}"?>';
             echo "<label for='inputC' class='col-sm-3 control-label'>Editar Comentario</label>";
-            echo "<textarea required type='text' style='padding-right: 250px;' rows='5' name='ec' value='$comment'></textarea><br>";
+            echo "<textarea required type='text' style='padding-right: 250px;' rows='5' name='ec'>$comment</textarea><br>";
             echo "<div id='erro-texto'></div>";
             echo "<?php if (!empty($erro_texto)): ?>
                     <span class='help-block'><?php echo $erro_texto ?></span>
