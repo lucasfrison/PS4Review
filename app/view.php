@@ -57,15 +57,16 @@
               <form enctype="multipart/form-data" class="form" id="form-test" method="POST" action=''>
 
                   <!---Texto---->
-                  <div class="form-group col-xs-12 <?php if(!empty($erro_texto)){echo "has-error";}?>">
+                  <div class="form-group <?php if(!empty($erro_texto)){echo "has-error";}?>">
                     
                       <label for="inputTexto" class="col-sm-12 control-label">Novo Comentario</label>
+ 
+                      <textarea style="margin-top: 20px;" required type="text" class="form-control" name="comment" placeholder="Comentario" value="<?php echo $texto; ?>" rows="5"></textarea><br>
                       <div id="erro-texto">
                       <?php if (!empty($erro_texto)): ?>
                         <span class="help-block"><?php echo $erro_texto ?></span>
                       <?php endIf; ?>
-                      </div>  
-                      <textarea style="margin-top: 20px;" required type="text" class="form-control" name="comment" placeholder="Comentario" value="<?php echo $texto; ?>" rows="5"></textarea>
+                      </div>
                       <button type="submit" class="btn btn-success">Postar</button>
                     
                   </div>
