@@ -26,70 +26,70 @@
               ?>
         
         <?php endif;?>
-    <div class="topbar col-xs-12">
-      <span>PS4Review</span>
+      <div class="topbar col-xs-12">
+        <span>PS4Review</span>
 
-      <ul>
-        <li><a href="logout.php">Sair</a></li>
-        <?php if($isadmin):?>
-            <li><a href="posts.php">Meus Posts</a></li>
-        <?php endif;?>    
-        <li><a href="index.php">Home</a></li> 
-      </ul>
-    </div>
+        <ul>
+          <li><a href="logout.php">Sair</a></li>
+          <?php if($isadmin):?>
+              <li><a href="posts.php">Meus Posts</a></li>
+          <?php endif;?>    
+          <li><a href="index.php">Home</a></li> 
+        </ul>
+      </div>
 
-    <div class="container">
-        <div style="margin-top: 40px;" class="col-xs-12"> 
-            <?php $id = $_GET['id'];?>
-            <?php $title = $_GET['title'];?>
-            <?php $text2 = $_GET['text'];?>
-            <?php echo "<h1 class='page-header'>$title</h1>"; ?>
-            <p style="word-wrap: break-word; width: 800px;">
-              <span style="font-size: 18px;">
-                <?php echo "$text2";?><br><br>
-                <?php echo "Autor: $admin_name";?>
-              </span>
-            </p>
-        </div>
-        <?php if(!isset($_GET['edit'])):  ?>
-        <div style="margin-top: 40px;" class="col-xs-12">
-        
-            <form enctype="multipart/form-data" class="form" id="form-test" method="POST" action=''>
+      <div class="container">
+          <div style="margin-top: 40px;" class="col-xs-12"> 
+              <?php $id = $_GET['id'];?>
+              <?php $title = $_GET['title'];?>
+              <?php $text2 = $_GET['text'];?>
+              <?php echo "<h1 class='page-header'>$title</h1>"; ?>
+              <p style="word-wrap: break-word; width: 800px;">
+                <span style="font-size: 18px;">
+                  <?php echo "$text2";?><br><br>
+                  <?php echo "Autor: $admin_name";?>
+                </span>
+              </p>
+          </div>
+          <?php if(!isset($_GET['edit'])):  ?>
+          <div style="margin-top: 40px;" class="col-xs-12">
+          
+              <form enctype="multipart/form-data" class="form" id="form-test" method="POST" action=''>
 
-                <!---Texto---->
-                <div class="form-group col-xs-12 <?php if(!empty($erro_texto)){echo "has-error";}?>">
-                  <div>
-                  <label for="inputTexto" class="col-sm-3 control-label">Novo Comentario</label>
-                    <textarea style="margin-top: 20px;" required type="text" class="form-control" name="comment" placeholder="Comentario" value="<?php echo $texto; ?>" rows="5"></textarea>
-                    <div id="erro-texto">
+                  <!---Texto---->
+                  <div class="form-group col-xs-12 <?php if(!empty($erro_texto)){echo "has-error";}?>">
+                    <div>
+                    <label for="inputTexto" class="col-sm-3 control-label">Novo Comentario</label>
+                      <textarea style="margin-top: 20px;" required type="text" class="form-control" name="comment" placeholder="Comentario" value="<?php echo $texto; ?>" rows="5"></textarea>
+                      <div id="erro-texto">
 
+                      </div>
+                      <?php if (!empty($erro_texto)): ?>
+                        <span class="help-block"><?php echo $erro_texto ?></span>
+                      <?php endIf; ?>
                     </div>
-                    <?php if (!empty($erro_texto)): ?>
-                      <span class="help-block"><?php echo $erro_texto ?></span>
-                    <?php endIf; ?>
                   </div>
-                </div>
-                    
-                <div class="form-group">
-                  <div class="col-sm-10">
-                    <button type="submit" class="btn btn-success">Postar</button>
+                      
+                  <div class="form-group">
+                    <div class="col-sm-10">
+                      <button type="submit" class="btn btn-success">Postar</button>
+                    </div>
                   </div>
-                </div>
-            </form>
-            
-        </div>
-        <?php endif;?>
-       
-    </div>
-    <div class="container">
-        <h3 style="border-top: 20px;" class="page-header">Comentarios</h3>
-        <?php show_comments(); ?>
-    </div> 
-    <div class="foot">
-          <h1 style="color: yellow">PS4 Review</h1>
-          <p>Essa pagina e simbolica. <br> Nao ha companhias relacionadas a ela.</p>
-          <span>Contato: lucfg15@gmail.com</span>
-    </div>   
+              </form>
+                      
+          </div>
+          <?php endif;?>
+                      
+      </div>
+      <div class="container">
+          <h3 style="border-top: 20px;" class="page-header">Comentarios</h3>
+          <?php show_comments(); ?>
+      </div> 
+      <div class="foot">
+            <h1 style="color: yellow">PS4 Review</h1>
+            <p>Essa pagina e simbolica. <br> Nao ha companhias relacionadas a ela.</p>
+            <span>Contato: lucfg15@gmail.com</span>
+      </div>   
     <?php else:?>
         <?php die("<h1>Para acessar, faca <a href='login.php'>login</a></h1>"); ?>
     <?php endif;?>    

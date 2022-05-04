@@ -26,51 +26,51 @@
           $password = verifica_campo($_POST["password"]);
     }
     if (!$error)
-     if (isset($_POST["email"]) && isset($_POST["password"])) {
+      if (isset($_POST["email"]) && isset($_POST["password"])) {
    
-       $conn = connect_db();
-   
-       $email = mysqli_real_escape_string($conn,$_POST["email"]);
-       $password = mysqli_real_escape_string($conn,$_POST["password"]);
-       $password = md5($password);
-   
-       $sql = "SELECT id,name,email,password FROM $table_users
-               WHERE email = '$email';";
-   
-       $result = mysqli_query($conn, $sql);
-       if($result){
-         if (mysqli_num_rows($result) > 0) {
-           $user = mysqli_fetch_assoc($result);
-   
-           if ($user["password"] == $password) {
+        $conn = connect_db();
+        
+        $email = mysqli_real_escape_string($conn,$_POST["email"]);
+        $password = mysqli_real_escape_string($conn,$_POST["password"]);
+        $password = md5($password);
+        
+        $sql = "SELECT id,name,email,password FROM $table_users
+                WHERE email = '$email';";
 
-             $_SESSION["user_id"] = $user["id"];
-             $_SESSION["user_name"] = $user["name"];
-             $_SESSION["user_email"] = $user["email"];
-   
-             header("Location: " . dirname($_SERVER['SCRIPT_NAME']) . "/index.php");
-             exit();
-           }
-           else {
-             $error_msg = "Senha incorreta!";
-             $error = true;
-           }
-         }
-         else{
-           $error_msg = "Usuário não encontrado!";
-           $error = true;
-         }
-       }
-       else {
-         $error_msg = mysqli_error($conn);
-         $error = true;
-       }
-       disconnect_db($conn);
-     }
-     else {
-       $error_msg = "Por favor, preencha todos os dados.";
-       $error = true;
-     }
-   }
+        $result = mysqli_query($conn, $sql);
+        if($result){
+          if (mysqli_num_rows($result) > 0) {
+            $user = mysqli_fetch_assoc($result);
+          
+            if ($user["password"] == $password) {
+
+              $_SESSION["user_id"] = $user["id"];
+              $_SESSION["user_name"] = $user["name"];
+              $_SESSION["user_email"] = $user["email"];
+            
+              header("Location: " . dirname($_SERVER['SCRIPT_NAME']) . "/index.php");
+              exit();
+            }
+            else {
+              $error_msg = "Senha incorreta!";
+              $error = true;
+            }
+          }
+          else{
+            $error_msg = "Usuário não encontrado!";
+            $error = true;
+          }
+        }
+        else {
+          $error_msg = mysqli_error($conn);
+          $error = true;
+        }
+        disconnect_db($conn);
+      }
+      else {
+        $error_msg = "Por favor, preencha todos os dados.";
+        $error = true;
+      }
+    }
    
 ?>

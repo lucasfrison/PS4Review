@@ -28,5 +28,5 @@ $(function(){
   
       return(true);
     });
-  });
+});
   

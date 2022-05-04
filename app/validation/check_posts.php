@@ -40,12 +40,12 @@ function show_post_list() {
     global $table_posts, $id, $title, $text;
     $conn = connect_db();
     $sql = "SELECT id, title, content FROM $table_posts";
-    $result = mysqli_query($conn, $sql); // First parameter is just return of "mysqli_connect()" function
+    $result = mysqli_query($conn, $sql); 
     echo "<br><br>";
     //echo "<h2 class='page-header'>Posts</h2>";
     echo "<ul class='list-group text-center'>";
     
-    while ($row = mysqli_fetch_assoc($result)) { // Important line !!! Check summary get row on array ..
+    while ($row = mysqli_fetch_assoc($result)) { 
         echo "<tr>";
         foreach ($row as $value) { 
             $id = $row['id'];

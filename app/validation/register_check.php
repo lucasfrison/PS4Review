@@ -45,44 +45,44 @@
         $confirm_password = verifica_campo($_POST["confirm_password"]);
       }
       if (!$error)
-      if (isset($_POST["name"]) && isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["confirm_password"])) {
+        if (isset($_POST["name"]) && isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["confirm_password"])) {
   
-        $conn = connect_db();
-  
-        $name = mysqli_real_escape_string($conn,$_POST["name"]);
-        $email = mysqli_real_escape_string($conn,$_POST["email"]);
-        $password = mysqli_real_escape_string($conn,$_POST["password"]);
-        $confirm_password = mysqli_real_escape_string($conn,$_POST["confirm_password"]);
-        $password = md5($password);
+          $conn = connect_db();
+          
+          $name = mysqli_real_escape_string($conn,$_POST["name"]);
+          $email = mysqli_real_escape_string($conn,$_POST["email"]);
+          $password = mysqli_real_escape_string($conn,$_POST["password"]);
+          $confirm_password = mysqli_real_escape_string($conn,$_POST["confirm_password"]);
+          $password = md5($password);
 
-        $sql = "SELECT * FROM $table_users WHERE email=$email";
+          $sql = "SELECT * FROM $table_users WHERE email=$email";
 
-        if(!mysqli_query($conn, $sql)){ 
-          $success = true;
+          if(!mysqli_query($conn, $sql)){ 
+            $success = true;
+          }
+          else {
+            $error = true;
+            $erro_email = "Email ja cadastrado.";
+          }
+        
+          $sql = "INSERT INTO $table_users
+                  (name, email, password, created_at) VALUES
+                  ('$name', '$email', '$password', NOW())";
+
+          if(mysqli_query($conn, $sql)){
+            $name = $email = $password = $confirm_password = "";  
+            $success = true;
+          }
+          else {
+            $error_msg = mysqli_error($conn);
+            $error = true;
+          }
+          disconnect_db($conn);
         }
         else {
-          $error = true;
-          $erro_email = "Email ja cadastrado.";
-        }
-  
-        $sql = "INSERT INTO $table_users
-                (name, email, password, created_at) VALUES
-                ('$name', '$email', '$password', NOW())";
-  
-        if(mysqli_query($conn, $sql)){
-          $name = $email = $password = $confirm_password = "";  
-          $success = true;
-        }
-        else {
-          $error_msg = mysqli_error($conn);
+          $error_msg = "Por favor, preencha todos os dados.";
           $error = true;
         }
-        disconnect_db($conn);
-      }
-      else {
-        $error_msg = "Por favor, preencha todos os dados.";
-        $error = true;
-      }
     }
   
 

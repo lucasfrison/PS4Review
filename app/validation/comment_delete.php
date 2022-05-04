@@ -6,22 +6,22 @@
 
     if ($login) {
     
-    $id = $_GET['id'];
-    $error = false;
-   
-    $conn = connect_db();
+        $id = $_GET['id'];
+        $error = false;
+        
+        $conn = connect_db();
 
-    $id = mysqli_real_escape_string($conn,$id);
-    $sql = "DELETE FROM $table_comments WHERE id = $id";
-    if(mysqli_query($conn, $sql)){  
-        $success = true;
-        header('Location: ' . $_SERVER['HTTP_REFERER']);
-        exit();
+        $id = mysqli_real_escape_string($conn,$id);
+        $sql = "DELETE FROM $table_comments WHERE id = $id";
+        if(mysqli_query($conn, $sql)){  
+            $success = true;
+            header('Location: ' . $_SERVER['HTTP_REFERER']);
+            exit();
+        }
+        else {
+            $error_msg = mysqli_error($conn);
+            $error = true;
+        }
+        disconnect_db($conn);
     }
-    else {
-        $error_msg = mysqli_error($conn);
-        $error = true;
-    }
-    disconnect_db($conn);
-}
 ?>

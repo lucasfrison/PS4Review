@@ -8,7 +8,7 @@
         die("Connection failed: " . mysqli_connect_error());
     }
 
-    // Create database
+    // Cria bd
     $sql = "CREATE DATABASE $dbname";
     if (mysqli_query($conn, $sql)) {
         echo "<br>Banco de dados criado com sucesso!<br>";
@@ -16,7 +16,7 @@
         echo "<br>Erro ao criar o BD: " . mysqli_error($conn);
     }
 
-    // Choose database
+    // seleciona bd
     $sql = "USE $dbname";
     if (mysqli_query($conn, $sql)) {
         echo "<br>Banco de dados selecionado.<br>";
@@ -24,7 +24,7 @@
         echo "<br>Erro ao selecionar o BD: " . mysqli_error($conn);
     }
 
-    // sql to create table
+    // cria tabela users
     $sql = "CREATE TABLE $table_users (
       id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
       name VARCHAR(100) NOT NULL,
@@ -39,7 +39,7 @@
     } else {
         echo "<br>Erro ao criar a tabela $table_users: " . mysqli_error($conn);
     }
-
+    //insere conta de admin
     $sql = "INSERT INTO $table_users
             (name, email, password, created_at) VALUES
             ('$admin_name', '$admin_email', '$admin_pass', NOW());";
