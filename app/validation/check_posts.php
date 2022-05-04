@@ -52,7 +52,7 @@ function show_post_list() {
             $title = $row['title'];
             $text = $row['content'];
         }
-        echo "<li class='list-group-item'><a href='view.php?id=$id&title=$title&text=$text'>".$row['title']."</a></li>";
+        echo "<li style='font-size: 20px;' class='list-group-item'><a href='view.php?id=$id&title=$title&text=$text'>".$row['title']."</a></li>";
     }    
     echo "</ul>";
     disconnect_db($conn);
@@ -83,17 +83,17 @@ function show_comments() {
                     <span class='help-block'><?php echo $erro_texto ?></span>
                   <?php endIf; ?>";
             echo "<input class='btn btn-success' type='submit' value='Confirmar'></input>"." ";
-            echo "<a href='view.php?id=$id&title=$title&text=$text'>Voltar</a>";
+            echo "<a class='btn btn-default'  role='button' href='view.php?id=$id&title=$title&text=$text'>Voltar</a>";
             echo "</div>";
             echo "</form>";
            
         }
         else  { 
-            echo "<div style='word-wrap: break-word; width: 800px;'><p>$comment</p></div>";
+            echo "<div style='word-wrap: break-word; width: 800px;' class='page-header'><p>$comment</p></div>";
             if ($row['name'] == $autor) {
                 if ($_SESSION['user_id'] == $user_id) {
-                    echo "<a href='view.php?id=$id&title=$title&text=$text&edit=$cid'>Editar</a>"." ";
-                    echo "<a href='validation/comment_delete.php?id=$cid'>Excluir</a></p>";
+                    echo "<a class='btn btn-success' role='button' href='view.php?id=$id&title=$title&text=$text&edit=$cid'>Editar</a>"." ";
+                    echo "<a class='btn btn-danger' role='button' href='validation/comment_delete.php?id=$cid'>Excluir</a></p>";
                 }
             }
         }
