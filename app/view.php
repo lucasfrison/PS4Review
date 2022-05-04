@@ -58,23 +58,19 @@
 
                   <!---Texto---->
                   <div class="form-group col-xs-12 <?php if(!empty($erro_texto)){echo "has-error";}?>">
-                    <div>
-                    <label for="inputTexto" class="col-sm-3 control-label">Novo Comentario</label>
-                      <textarea style="margin-top: 20px;" required type="text" class="form-control" name="comment" placeholder="Comentario" value="<?php echo $texto; ?>" rows="5"></textarea>
+                    
+                      <label for="inputTexto" class="col-sm-12 control-label">Novo Comentario</label>
                       <div id="erro-texto">
-
-                      </div>
                       <?php if (!empty($erro_texto)): ?>
                         <span class="help-block"><?php echo $erro_texto ?></span>
                       <?php endIf; ?>
-                    </div>
+                      </div>  
+                      <textarea style="margin-top: 20px;" required type="text" class="form-control" name="comment" placeholder="Comentario" value="<?php echo $texto; ?>" rows="5"></textarea>
+                      <button type="submit" class="btn btn-success">Postar</button>
+                    
                   </div>
                       
-                  <div class="form-group">
-                    <div class="col-sm-10">
-                      <button type="submit" class="btn btn-success">Postar</button>
-                    </div>
-                  </div>
+                  
               </form>
                       
           </div>
