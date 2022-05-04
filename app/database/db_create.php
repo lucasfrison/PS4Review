@@ -53,7 +53,7 @@
     $sql = "CREATE TABLE $table_posts (
         id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         title VARCHAR(100) NOT NULL,
-        content VARCHAR(400) NOT NULL,
+        content TEXT NOT NULL,
         created_at DATETIME,
         updated_at DATETIME
       )";
@@ -68,7 +68,7 @@
         id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         user_id INT(6) UNSIGNED,
         post_id INT(6) UNSIGNED,
-        content VARCHAR(400) NOT NULL,
+        content TEXT NOT NULL,
         created_at DATETIME,
         updated_at DATETIME,
         FOREIGN KEY (user_id) REFERENCES $table_users(id),
