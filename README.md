@@ -17,14 +17,14 @@ O projeto possui os seguintes recursos disponiveis ao usuario:
 
 * **Todos**:
     * Criar conta;
-    * vizualizar pagina inicial;
+    * Visualizar pagina inicial;
 
 * **Usuarios logados**:
-    * Vizualizacao de posts. 
-    * Criacao, vizualizacao, edicao e exclusao de seus PROPRIOS comentarios;
+    * Visualizacao de posts. 
+    * Criacao, visualizacao, edicao e exclusao de seus PROPRIOS comentarios;
 
 * **Exclusivo Administrador**:
-    * Criacao, vizualizacao, edicao e exclusao de posts; 
+    * Criacao, visualizacao, edicao e exclusao de posts; 
 
 ## Tecnologias (Stack):
 
