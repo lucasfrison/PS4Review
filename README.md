@@ -16,7 +16,7 @@ na disciplina de Desenvolvimento Web.
 O projeto possui os seguintes recursos disponiveis ao usuario:
 
 * **Todos**:
-    * Criar conta;
+* Criar conta;
     * Visualizar pagina inicial;
 
 * **Usuarios logados**:
